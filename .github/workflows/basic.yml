@@ -11,15 +11,17 @@ on:
 
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
 
-  steps:
-    - uses: Actions/checkout@v3
-
-    - name: Run a one-line script
-      run: echo Hello, World!
-    - name: Run a multi-line script
-      run: |
-        echo Add other Actions to build,
-        echo test, and deploy your project.
+      steps:
+    - uses: actions/checkout@v3
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, World!
+      - name: Run a multi-line script
+        run: |
+          echo Add other Actions to build,
+          echo test, and deploy your project.
